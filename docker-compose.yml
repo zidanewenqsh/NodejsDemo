@@ -1,0 +1,12 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - "8080:8080"
+    command: npm run dev
+    volumes:
+      - ./src/app:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
